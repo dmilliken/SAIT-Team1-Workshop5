@@ -1,0 +1,46 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+<!-- Darcie Milliken --> 
+<!DOCTYPE html>
+<html lang="en">
+<head id="Head1" runat="server">
+    <meta charset="utf-8" />
+    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+</head>
+<body>
+    <form id="Form1" runat="server">
+
+    <header>
+       
+        <section class="banner">
+    <%--<img class="logo" src="images/logo.png">--%>
+    <h1>Travel Experts</h1>
+    
+  </section>
+        <!-- Navigation Menu --> 
+    <ul class="menu">
+    <li><a href="Default.aspx">Home</a></li>
+    <li><a href="CustomerInfo.aspx">Account Info</a></li>
+        <li><a href="CustomerBookings.aspx">Customer Bookings</a></li>
+  </ul> 
+        
+    </header>
+        <!-- Body Content --> 
+    <div id="body">
+        <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
+        <section class="content-wrapper main-content clear-fix">
+            <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+        </section>
+    </div>
+    <footer>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p>
+                    &copy; <%: DateTime.Now.Year %> - Travel Experts
+                </p>
+            </div>
+        </div>
+    </footer>
+    </form>
+</body>
+</html>
