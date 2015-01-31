@@ -1,0 +1,12 @@
+﻿
+.Login{
+border: 1px Solid #B5C7DE;
+    background-color:#EFF3FB;
+    border-spacing:4px;
+    Font-Size:0.8em;
+    position:fixed;
+    margin:0.5%;
+    top: 310px;
+    left: 497px;
+    z-index:1;
+}
