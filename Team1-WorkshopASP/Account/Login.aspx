@@ -4,17 +4,14 @@
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <link href="Login.css" rel="stylesheet" type="text/css" />
     <hgroup class="title">
-        <h2><asp:Login runat="server"  CssClass="Login" >
+        <h2><asp:Login runat="server"  CssClass="Login" BackColor="#F7F6F3" BorderColor="#E6E2D8" BorderPadding="4" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#333333" >
             <InstructionTextStyle Font-Italic="True" ForeColor="Black" />
             <LayoutTemplate>
-                <p class="validation-summary-errors">
-                    <asp:Literal runat="server" ID="FailureText" />
-                </p>
                 <fieldset>
                     <legend>Log in Form</legend>
                     <ol>
                         <li>
-                            <asp:Label runat="server" AssociatedControlID="UserName">User name</asp:Label>
+                            <asp:Label runat="server" AssociatedControlID="UserName">Email</asp:Label>
                             <asp:TextBox runat="server" ID="UserName" Width="338px" />
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="UserName" CssClass="field-validation-error" ErrorMessage="The user name field is required." ForeColor="Red" />
                         </li>
@@ -31,12 +28,12 @@
                     <asp:Button runat="server" CommandName="Login" Text="Log in" />
                 </fieldset>
             </LayoutTemplate>
-            <LoginButtonStyle BackColor="White" BorderColor="#507CD1" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#284E98" />
+            <LoginButtonStyle BackColor="#FFFBFF" BorderColor="#CCCCCC" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#284775" />
             <TextBoxStyle Font-Size="0.8em" />
-            <TitleTextStyle BackColor="#507CD1" Font-Bold="True" Font-Size="0.9em" ForeColor="White" />
+            <TitleTextStyle BackColor="#5D7B9D" Font-Bold="True" Font-Size="0.9em" ForeColor="White" />
         </asp:Login>
             Please Enter You Email To Login</h2>
-        <h1><%: Title %>.</h1>
+        <h1><%: Title %>.stuff goes herer</h1>
     </hgroup>
     
     <section id="loginForm">
@@ -44,6 +41,9 @@
 
     <section id="socialLoginForm">
         <h2 style="height: 297px; margin-top: 0px;">&nbsp;</h2>
+                <p class="validation-summary-errors" __designer:mapid="ea">
+                    <asp:Literal runat="server" ID="FailureText" />
+                </p>
         <p>
             <asp:HyperLink runat="server" ID="RegisterHyperLink" ViewStateMode="Disabled">Register</asp:HyperLink>
             &nbsp;if you don't have an account.
