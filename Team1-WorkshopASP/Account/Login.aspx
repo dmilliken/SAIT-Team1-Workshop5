@@ -9,22 +9,22 @@
             <LayoutTemplate>
                 <fieldset>
                     <legend>Log in Form</legend>
-                    <ol>
-                        <li>
-                            <asp:Label runat="server" AssociatedControlID="UserName">Email</asp:Label>
-                            <asp:TextBox runat="server" ID="UserName" Width="338px" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="UserName" CssClass="field-validation-error" ErrorMessage="The user name field is required." ForeColor="Red" />
-                        </li>
-                        <li>
-                            <asp:Label runat="server" AssociatedControlID="Password">Password</asp:Label>
-                            <asp:TextBox runat="server" ID="Password" TextMode="Password" Width="335px" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="Password" CssClass="field-validation-error" ErrorMessage="The password field is required." ForeColor="Red" />
-                        </li>
-                        <li>
+                    <Table>
+                        <tr>
+                           <td> <asp:Label runat="server" AssociatedControlID="UserName">Email</asp:Label></td>
+                           <td> <asp:TextBox runat="server" ID="UserName" Width="334px" style="margin-left: 51px" /></td>
+                           <td><asp:RequiredFieldValidator runat="server" ControlToValidate="UserName" CssClass="field-validation-error" ErrorMessage="The user name field is required." ForeColor="Red" /></td>
+                        </tr>
+                        <tr>
+                           <td> <asp:Label runat="server" AssociatedControlID="Password">Password</asp:Label></td>
+                            <td><asp:TextBox runat="server" ID="Password" TextMode="Password" Width="334px" style="margin-left: 51px" /></td>
+                            <td><asp:RequiredFieldValidator runat="server" ControlToValidate="Password" CssClass="field-validation-error" ErrorMessage="The password field is required." ForeColor="Red" /></td>
+                        </tr>
+                        <tr>
                             <asp:CheckBox runat="server" ID="RememberMe" />
                             <asp:Label runat="server" AssociatedControlID="RememberMe" CssClass="checkbox">Remember me?</asp:Label>
-                        </li>
-                    </ol>
+                        </tr>
+                    </Table>
                     <asp:Button runat="server" CommandName="Login" Text="Log in" />
                 </fieldset>
             </LayoutTemplate>
@@ -33,7 +33,6 @@
             <TitleTextStyle BackColor="#5D7B9D" Font-Bold="True" Font-Size="0.9em" ForeColor="White" />
         </asp:Login>
             Please Enter You Email To Login</h2>
-        <h1><%: Title %>.stuff goes herer</h1>
     </hgroup>
     
     <section id="loginForm">
