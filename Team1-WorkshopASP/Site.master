@@ -20,10 +20,11 @@
         <!-- Navigation Menu --> 
     <ul class="menu">
     
-    <li><a href="..\Default.aspx">Home</a></li>
-    <li><a href="..\CustomerInfo.aspx">Account Info</a></li>
-    <li><a href="..\CustomerBookings.aspx">Customer Bookings</a></li>
-    <li><asp:HyperLink runat="server" ID="RegisterHyperLink" ViewStateMode="Disabled">Register</asp:HyperLink></li>
+        <li><asp:HyperLink runat="server" ID="HyperLink2" NavigateUrl="Default.aspx" ViewStateMode="Disabled">Travel Experts Home</asp:HyperLink></li> 
+        <li><asp:HyperLink runat="server" ID="HyperLink1" NavigateUrl="Account\Login.aspx" ViewStateMode="Disabled">Login</asp:HyperLink></li> 
+        <li><asp:HyperLink runat="server" ID="HyperLink3" NavigateUrl="CustomerInfo.aspx" ViewStateMode="Disabled">Account Info</asp:HyperLink></li> 
+        <li><asp:HyperLink runat="server" ID="HyperLink4" NavigateUrl="CustomerBookings.aspx" ViewStateMode="Disabled">Customer Bookings</asp:HyperLink></li> 
+        <li><asp:HyperLink runat="server" ID="RegisterHyperLink" ViewStateMode="Disabled">Register</asp:HyperLink></li>
     
 
   </ul> 

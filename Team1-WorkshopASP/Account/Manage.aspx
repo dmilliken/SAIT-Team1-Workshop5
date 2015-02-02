@@ -12,7 +12,9 @@
         </asp:PlaceHolder>
 
         <p>You're logged in as <strong><%: User.Identity.Name %></strong>.</p>
+         <p>You're logged in as <strong><%:  Membership.GetUser(User.Identity.Name).Email %></strong>.</p>
 
+       
         <asp:PlaceHolder runat="server" ID="setPassword" Visible="false">
             <p>
                 You do not have a local password for this site. Add a local

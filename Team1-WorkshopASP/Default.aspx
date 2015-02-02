@@ -1,8 +1,8 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
-    <h3>Hello! Please select your surname:
-        <!-- Dropdown menu to select the customer -->
+    <!--h3>Hello! Please select your surname:
+        <!-- Dropdown menu to select the customer ->
         <asp:DropDownList ID="ddlChooseCustomer" runat="server" AutoPostBack="True" DataSourceID="CustomerDropDownData" 
             DataTextField="CustLastName" DataValueField="CustomerID" OnSelectedIndexChanged="ddlChooseCustomer_SelectedIndexChanged">
         </asp:DropDownList>
@@ -14,12 +14,16 @@
                 <asp:Parameter Name="newCustomer" Type="Object" />
             </UpdateParameters>
         </asp:ObjectDataSource>
-    </h3>
+    </!--h3-->
     
     <!-- Upon selection, display the greeting panel  -->
 
+    <!-- This is Where thoe Home page link goes to to -->
+
+   <h1>Place holder for final Travel Experts Home Page</h1> 
+
     <h3 class="invisible">&nbsp;</h3>
-    <p class="invisible"> </p>
+    <p class="invisible"></p>
 
     <asp:Panel ID="pnlGreeting" runat="server" Visible="False">
        <h3> Thank you,&nbsp;
