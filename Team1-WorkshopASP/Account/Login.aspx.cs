@@ -10,13 +10,14 @@ public partial class Account_Login : Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        RegisterHyperLink.NavigateUrl = "Register.aspx";
-     //   OpenAuthLogin.ReturnUrl = Request.QueryString["ReturnUrl"];
+        
+     //  RegisterHyperLink.NavigateUrl = "Register.aspx";
+      // OpenAuthLogin.ReturnUrl = Request.QueryString["CustomerBookings.aspx"];
 
-        var returnUrl = HttpUtility.UrlEncode(Request.QueryString["ReturnUrl"]);
+       var returnUrl = HttpUtility.UrlEncode(Request.QueryString["CustomerBookings.aspx"]);
         if (!String.IsNullOrEmpty(returnUrl))
         {
-            RegisterHyperLink.NavigateUrl += "?ReturnUrl=" + returnUrl;
+       // RegisterHyperLink.NavigateUrl += "?ReturnUrl=" + returnUrl;
         }
     }
 }

@@ -19,9 +19,13 @@
   </section>
         <!-- Navigation Menu --> 
     <ul class="menu">
-    <li><a href="Default.aspx">Home</a></li>
-    <li><a href="CustomerInfo.aspx">Account Info</a></li>
-        <li><a href="CustomerBookings.aspx">Customer Bookings</a></li>
+    
+    <li><a href="..\Default.aspx">Home</a></li>
+    <li><a href="..\CustomerInfo.aspx">Account Info</a></li>
+    <li><a href="..\CustomerBookings.aspx">Customer Bookings</a></li>
+    <li><asp:HyperLink runat="server" ID="RegisterHyperLink" ViewStateMode="Disabled">Register</asp:HyperLink></li>
+    
+
   </ul> 
         
     </header>
