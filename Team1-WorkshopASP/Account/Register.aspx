@@ -4,7 +4,6 @@
     <hgroup class="title">
         <h1><%: Title %>
 
-            </asp:DropDownList>
         </h1>
         <p>&nbsp;</p>
         <h2>Use the form below to create a new account.</h2>
@@ -94,7 +93,7 @@
                     <br />
                     <br />
                     <br />
-                    <asp:Button runat="server" CommandName="MoveNext" Text="Next" OnClick="Unnamed10_Click" UseSubmitBehavior="False"/>
+                    <asp:Button runat="server" CommandName="MoveNext" Text="Next" UseSubmitBehavior="False"/>
                 </ContentTemplate>
                 <CustomNavigationTemplate/>
             </asp:CreateUserWizardStep>

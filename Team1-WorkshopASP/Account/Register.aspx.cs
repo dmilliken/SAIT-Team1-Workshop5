@@ -29,23 +29,21 @@ public partial class Account_Register : Page
         string eMail = email.Text;
         Session["newEmail"] = eMail;
         Customer newuser = CustomerDB.GetCustomerByEmail(eMail);
-        if (newuser == null)
+        if (newuser != null)
         {
+            Session["customer"] = newuser.CustomerID;
             Session["loggedin"] = true;
-            Session["new"] = true;
-        }
-        else
-        {
-            Response.Write("<script>alert('User Email Already Exists!');</script>");
+            CustomerDB.AddCustomer(newuser);
 
         }
+            
+
+            //Response.Write("<script>alert('User Email Already Exists!');</script>");
+
         //End of Brodie Addition
         Response.Redirect(continueUrl);
     }
 
 
-    protected void Unnamed10_Click(object sender, EventArgs e)
-    {
 
-    }
 }

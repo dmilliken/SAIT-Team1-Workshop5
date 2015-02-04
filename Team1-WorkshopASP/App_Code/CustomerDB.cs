@@ -25,7 +25,7 @@ namespace Team1_Workshop4_Part2
             SqlConnection connection = TravelExpertsDB.GetConnection();
             string selectStatement =
                 "SELECT CustomerID, CustFirstName, CustLastName, CustAddress, CustCity, CustProv, CustPostal, CustCountry, " +
-                "CustHomePhone, CustBusPhone, CustEmail, AgentID FROM Customers WHERE CustEmail = @custEmail";
+                "CustHomePhone, CustBusPhone, CustEmail FROM Customers WHERE CustEmail = @custEmail";
 
             SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
             selectCommand.Parameters.AddWithValue("@custEmail", customerEmail);
@@ -49,7 +49,7 @@ namespace Team1_Workshop4_Part2
                     customer.CustHomePhone = (string)custReader["CustHomePhone"];
                     customer.CustBusPhone = (string)custReader["CustBusPhone"];
                     customer.CustEmail = (string)custReader["CustEmail"];
-                    customer.AgentId = (int)custReader["AgentID"];
+                    //customer.AgentId = (int)custReader["AgentID"];
 
                     return customer;
                 }
@@ -76,7 +76,7 @@ namespace Team1_Workshop4_Part2
             SqlConnection connection = TravelExpertsDB.GetConnection();
             string selectStatement =
                 "SELECT CustomerID, CustFirstName, CustLastName, CustAddress, CustCity, CustProv, CustPostal, CustCountry, " +
-                "CustHomePhone, CustBusPhone, CustEmail, AgentID FROM Customers ";
+                "CustHomePhone, CustBusPhone, CustEmail FROM Customers ";
                 
             SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
             
@@ -98,7 +98,7 @@ namespace Team1_Workshop4_Part2
                     customer.CustHomePhone = (string)custReader["CustHomePhone"];
                     customer.CustBusPhone = (string)custReader["CustBusPhone"];
                     customer.CustEmail = (string)custReader["CustEmail"];
-                    customer.AgentId = (int)custReader["AgentID"];
+                    //customer.AgentId = (int)custReader["AgentID"];
                     customers.Add(customer);
                 }
                 custReader.Close();
@@ -122,7 +122,7 @@ namespace Team1_Workshop4_Part2
             SqlConnection connection = TravelExpertsDB.GetConnection();
             string selectStatement =
                 "SELECT CustomerID, CustFirstName, CustLastName, CustAddress, CustCity, CustProv, CustPostal, CustCountry, " +
-                "CustHomePhone, CustBusPhone, CustEmail, AgentID FROM Customers WHERE CustomerID = @CustomerID";
+                "CustHomePhone, CustBusPhone, CustEmail FROM Customers WHERE CustomerID = @CustomerID";
 
             SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
             selectCommand.Parameters.AddWithValue("@CustomerID", customerID);
@@ -146,7 +146,7 @@ namespace Team1_Workshop4_Part2
                     customer.CustHomePhone = (string)custReader["CustHomePhone"];
                     customer.CustBusPhone = (string)custReader["CustBusPhone"];
                     customer.CustEmail = (string)custReader["CustEmail"];
-                    customer.AgentId = (int)custReader["AgentID"];
+                    //customer.AgentId = (int)custReader["AgentID"];
                     
                     return customer;
                 }
@@ -173,8 +173,8 @@ namespace Team1_Workshop4_Part2
             SqlConnection connection = TravelExpertsDB.GetConnection();
             string insertStatement =
                 "INSERT Customers " +
-                "(CustFirstName,CustLastName, CustAddress, CustCity, @CustProv, @CustPostal, @CustCountry, @CustHomePhone, @CustBusPhone) " +
-                "VALUES (@CustFirstName, @CustLastName, @CustAddress, @CustCity, @CustProv, @CustPostal, @CustCountry, @CustHomePhone, @CustBusPhone)";
+                "(CustFirstName,CustLastName, CustAddress, CustCity, CustProv, CustPostal, CustCountry, CustHomePhone, CustBusPhone, CustEmail) " +
+                "VALUES (@CustFirstName, @CustLastName, @CustAddress, @CustCity, @CustProv, @CustPostal, @CustCountry, @CustHomePhone, @CustBusPhone, @custEmail)";
             SqlCommand insertCommand =
                 new SqlCommand(insertStatement, connection);
             insertCommand.Parameters.AddWithValue(
@@ -195,6 +195,8 @@ namespace Team1_Workshop4_Part2
                 "@CustHomePhone", customer.CustHomePhone);
             insertCommand.Parameters.AddWithValue(
                 "@CustBusPhone", customer.CustBusPhone);
+            insertCommand.Parameters.AddWithValue(
+                "@custEmail", customer.CustEmail);
             try
             {
                 connection.Open();

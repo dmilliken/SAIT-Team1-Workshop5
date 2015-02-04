@@ -30,7 +30,7 @@ public partial class Account_Login : Page
         {
             Customer customer = CustomerDB.GetCustomerByEmail(user);
             Session["loggedin"] = true;
-            Session["new"] = false;
+
             Session["customer"] = customer.CustomerID;
             Response.Redirect("~/CustomerInfo.aspx");
         }
