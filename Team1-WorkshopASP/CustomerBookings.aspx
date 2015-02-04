@@ -32,7 +32,7 @@
         <!-- Data Source -->
         <asp:ObjectDataSource ID="CustomerBookingsPackages" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetPackagesFromCustomers" TypeName="Team1_Workshop4_Part2.PackagesDB">
             <SelectParameters>
-                <asp:SessionParameter Name="customerId" SessionField="custID" Type="Int32" />
+                <asp:SessionParameter Name="customerId" SessionField="customer" Type="Int32" />
             </SelectParameters>
         </asp:ObjectDataSource>
     </div>

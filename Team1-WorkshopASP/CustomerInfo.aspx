@@ -18,7 +18,7 @@
     <div>
 
         <br />
-        <asp:ListView ID="ListView1" runat="server" DataSourceID="CustomerDataEdit">
+        <asp:ListView ID="ListView1" runat="server" DataSourceID="CustomerDataEdit" InsertItemPosition="None">
             <AlternatingItemTemplate>
                 <span style="">
                     <%-- CustomerID:
@@ -113,7 +113,54 @@
             <EmptyDataTemplate>
                 <span>No data was returned.</span>
             </EmptyDataTemplate>
-           
+            <InsertItemTemplate>
+                <span style="">
+                    <%--CustomerID:
+                <asp:TextBox ID="CustomerIDTextBox" runat="server" Readonly="true" Text='<%# Bind("CustomerID") %>' />--%>
+                    <br />
+                    First Name:
+                <asp:TextBox ID="CustFirstNameTextBox" runat="server" Text='<%# Bind("CustFirstName") %>' />
+                    <!-- Validation for the customer first name -->
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Please provide your first name." ControlToValidate="CustFirstNameTextBox"></asp:RequiredFieldValidator>
+
+                    <br />
+                    Last Name:
+                <asp:TextBox ID="CustLastNameTextBox" runat="server" Text='<%# Bind("CustLastName") %>' />
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Please provide your last name." ControlToValidate="CustLastNameTextBox"></asp:RequiredFieldValidator>
+                    <br />
+                    Address:
+                <asp:TextBox ID="CustAddressTextBox" runat="server" Text='<%# Bind("CustAddress") %>' />
+                    <br />
+                    City:
+                <asp:TextBox ID="CustCityTextBox" runat="server" Text='<%# Bind("CustCity") %>' />
+                    <br />
+                    Prov:
+                <asp:TextBox ID="CustProvTextBox" runat="server" Text='<%# Bind("CustProv") %>' />
+                    <br />
+                    Postal:
+                <asp:TextBox ID="CustPostalTextBox" runat="server" Text='<%# Bind("CustPostal") %>' />
+                    <br />
+                    Country:
+                <asp:TextBox ID="CustCountryTextBox" runat="server" Text='<%# Bind("CustCountry") %>' />
+                    <br />
+                    Home Phone:
+                <asp:TextBox ID="CustHomePhoneTextBox" runat="server" Text='<%# Bind("CustHomePhone") %>' />
+                    <br />
+                    Business Phone:
+                <asp:TextBox ID="CustBusPhoneTextBox" runat="server" Text='<%# Bind("CustBusPhone") %>' />
+                    <br />
+                    Email:
+                <asp:TextBox ID="CustEmailTextBox" runat="server" Text='<%# Bind("CustEmail") %>' />
+                    <br />
+                    <%--    AgentId:
+                <asp:TextBox ID="AgentIdTextBox" runat="server" Text='<%# Bind("AgentId") %>' />--%>
+                    <br />
+                    <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insert" />
+                    <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" />
+                    <br />
+                    <br />
+                </span>
+            </InsertItemTemplate>
             <ItemTemplate>
                 <span style="">
                     <%--CustomerID:
@@ -211,7 +258,7 @@
         <!-- Data source and inputs-->
         <asp:ObjectDataSource ID="CustomerDataEdit" runat="server" DataObjectTypeName="System.Customer" DeleteMethod="DeleteCustomer" InsertMethod="AddCustomer" OldValuesParameterFormatString="original_{0}" SelectMethod="GetCustomerByID" TypeName="Team1_Workshop4_Part2.CustomerDB" UpdateMethod="UpdateCustomer" ConflictDetection="CompareAllValues">
             <SelectParameters>
-                <asp:SessionParameter Name="customerID" SessionField="custID" Type="Int32" />
+                <asp:SessionParameter Name="customerID" SessionField="customer" Type="Int32" />
             </SelectParameters>
             <UpdateParameters>
                 <asp:Parameter Name="original_customer" Type="Object" />

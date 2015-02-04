@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Team1_Workshop4_Part2;
 
 public partial class Account_Login : Page
 {
@@ -18,6 +19,25 @@ public partial class Account_Login : Page
         if (!String.IsNullOrEmpty(returnUrl))
         {
        // RegisterHyperLink.NavigateUrl += "?ReturnUrl=" + returnUrl;
+        }
+    }
+    protected void Login_Click(object sender, EventArgs e)
+    {
+        //Brodie Added Feb 03 2015
+        string user = ((TextBox)Login1.FindControl("UserName")).Text;
+        string pass = ((TextBox)Login1.FindControl("Password")).Text;
+        if (CustomerDB.GetCustomerByEmail(user) != null)
+        {
+            Customer customer = CustomerDB.GetCustomerByEmail(user);
+            Session["loggedin"] = true;
+            Session["new"] = false;
+            Session["customer"] = customer.CustomerID;
+            Response.Redirect("~/CustomerInfo.aspx");
+        }
+        else
+        {
+            Session["loggedin"] = false;
+            Response.Write("<script>alert('Credentials Entered Incorrectly or do not exist!');</script>");
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Membership.OpenAuth;
+using Team1_Workshop4_Part2;
 
 public partial class Account_Register : Page
 {
@@ -23,6 +24,24 @@ public partial class Account_Register : Page
         {
             continueUrl = "~/";
         }
+        //Added feb 03 2015 Brodie
+        TextBox email = RegisterUser.CreateUserStep.ContentTemplateContainer.FindControl("Email") as TextBox;
+        string eMail = email.Text;
+        Session["newEmail"] = eMail;
+        Customer newuser = CustomerDB.GetCustomerByEmail(eMail);
+        if (newuser == null)
+        {
+            Session["loggedin"] = true;
+            Session["new"] = true;
+        }
+        else
+        {
+            Response.Write("<script>alert('User Email Already Exists!');</script>");
+
+        }
+        //End of Brodie Addition
         Response.Redirect(continueUrl);
     }
+
+
 }
