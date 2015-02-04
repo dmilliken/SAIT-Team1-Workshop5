@@ -15,7 +15,7 @@ public partial class SiteMaster : MasterPage
     protected void Page_Init(object sender, EventArgs e)
     {
 
-        RegisterHyperLink.NavigateUrl = "Account/Register.aspx";
+        RegisterHyperLink.NavigateUrl = "Account\\Register.aspx";
         var returnUrl = HttpUtility.UrlEncode(Request.QueryString["CustomerBookings.aspx"]);
         if (!String.IsNullOrEmpty(returnUrl))
         {
