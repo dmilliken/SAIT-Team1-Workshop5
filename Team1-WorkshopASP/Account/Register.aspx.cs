@@ -44,8 +44,4 @@ public partial class Account_Register : Page
     }
 
 
-    protected void Unnamed10_Click(object sender, EventArgs e)
-    {
-
-    }
 }
