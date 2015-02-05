@@ -13,7 +13,7 @@ using System.ComponentModel;
 //Last Edited  Jan 21 2015
 
 
-{
+
     [DataObject(true)]
     public static class CustomerDB
     {
@@ -383,4 +383,4 @@ using System.ComponentModel;
             }
         }
     }
-}
+
