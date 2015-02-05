@@ -10,7 +10,7 @@
 
     <!--Darcie Milliken -->
 
-    <!-- When the customer name is selected, the customer's data is displayed in view mode. -->
+    <!-- When the customer logs in, the customer's data is displayed in view mode. -->
 
     <!-- The form validates that the first and last name fields are nonempty -->
 
@@ -23,47 +23,47 @@
                 <span style="">
                     <%-- CustomerID:
                 <asp:Label ID="CustomerIDLabel" runat="server" Text='<%# Eval("CustomerID") %>' />--%>
-                    &nbsp;<asp:Label ID="CustomerIDLabel" runat="server" Text='<%# Eval("CustomerID") %>' />
+                    <%--&nbsp;<asp:Label ID="CustomerIDLabel" runat="server" Text='<%# Eval("CustomerID") %>' />--%>
                     <br />
-                    CustFirstName:
+                    First Name:
                 <asp:Label ID="CustFirstNameLabel" runat="server" Text='<%# Eval("CustFirstName") %>' />
                     <br />
-                    CustLastName:
+                    Last Name:
                 <asp:Label ID="CustLastNameLabel" runat="server" Text='<%# Eval("CustLastName") %>' />
                     <br />
-                    CustAddress:
+                    Address:
                 <asp:Label ID="CustAddressLabel" runat="server" Text='<%# Eval("CustAddress") %>' />
                     <br />
-                    CustCity:
+                    Municipality:
                 <asp:Label ID="CustCityLabel" runat="server" Text='<%# Eval("CustCity") %>' />
                     <br />
-                    CustProv:
+                    Province:
                 <asp:Label ID="CustProvLabel" runat="server" Text='<%# Eval("CustProv") %>' />
                     <br />
-                    CustPostal:
+                    Postal Code:
                 <asp:Label ID="CustPostalLabel" runat="server" Text='<%# Eval("CustPostal") %>' />
                     <br />
-                    CustCountry:
+                    Country:
                 <asp:Label ID="CustCountryLabel" runat="server" Text='<%# Eval("CustCountry") %>' />
                     <br />
-                    CustHomePhone:
+                    Home Phone:
                 <asp:Label ID="CustHomePhoneLabel" runat="server" Text='<%# Eval("CustHomePhone") %>' />
                     <br />
-                    CustBusPhone:
+                    Business Phone:
                 <asp:Label ID="CustBusPhoneLabel" runat="server" Text='<%# Eval("CustBusPhone") %>' />
                     <br />
-                    CustEmail:
+                    Email:
                 <asp:Label ID="CustEmailLabel" runat="server" Text='<%# Eval("CustEmail") %>' />
                     <br />
                     AgentId:
-                <asp:Label ID="AgentIdLabel" runat="server" Text='<%# Eval("AgentId") %>' />
-                    <br />
-                    UserId:
+                <%--<asp:Label ID="AgentIdLabel" runat="server" Text='<%# Eval("AgentId") %>' />
+                    <br />--%>
+                   <%-- UserId:
                 <asp:Label ID="UserIdLabel" runat="server" Text='<%# Eval("UserId") %>' />
-                <br />
-                CustPassword:
+                <br />--%>
+                <%--CustPassword:
                 <asp:Label ID="CustPasswordLabel" runat="server" Text='<%# Eval("CustPassword") %>' />
-                <br />
+                <br />--%>
                     <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Edit" />
                     <br />
                     <br />
@@ -73,40 +73,40 @@
                 <span style="">
                     <%--CustomerID:
                 <asp:TextBox ID="CustomerIDTextBox" runat="server" Readonly="true" Text='<%# Bind("CustomerID") %>' />--%>
-                    &nbsp;<asp:TextBox ID="CustomerIDTextBox" runat="server" Text='<%# Bind("CustomerID") %>' />
+                    <%--&nbsp;<asp:TextBox ID="CustomerIDTextBox" runat="server" Text='<%# Bind("CustomerID") %>' />--%>
 
                     <br />
-                    CustFirstName:
+                    First Name:
                 <asp:TextBox ID="CustFirstNameTextBox" runat="server" Text='<%# Bind("CustFirstName") %>' />
                     <br />
-                    CustLastName:
+                    Last Name:
                 <asp:TextBox ID="CustLastNameTextBox" runat="server" Text='<%# Bind("CustLastName") %>' />
                     <br />
-                    CustAddress:
+                    Address:
                 <asp:TextBox ID="CustAddressTextBox" runat="server" Text='<%# Bind("CustAddress") %>' />
                     <br />
-                    CustCity:
+                    Municipality:
                 <asp:TextBox ID="CustCityTextBox" runat="server" Text='<%# Bind("CustCity") %>' />
                     <br />
-                    CustProv:
+                    Province:
                 <asp:TextBox ID="CustProvTextBox" runat="server" Text='<%# Bind("CustProv") %>' />
                     <br />
-                    CustPostal:
+                    Postal Code:
                 <asp:TextBox ID="CustPostalTextBox" runat="server" Text='<%# Bind("CustPostal") %>' />
                     <br />
-                    CustCountry:
+                    Country:
                 <asp:TextBox ID="CustCountryTextBox" runat="server" Text='<%# Bind("CustCountry") %>' />
                     <br />
-                    CustHomePhone:
+                    Home Phone:
                 <asp:TextBox ID="CustHomePhoneTextBox" runat="server" Text='<%# Bind("CustHomePhone") %>' />
                     <br />
-                    CustBusPhone:
+                    Business Phone:
                 <asp:TextBox ID="CustBusPhoneTextBox" runat="server" Text='<%# Bind("CustBusPhone") %>' />
                     <br />
                     <%--    AgentId:
                 <asp:TextBox ID="AgentIdTextBox" runat="server" Text='<%# Bind("AgentId") %>' />--%>
-                    &nbsp;<asp:TextBox ID="CustEmailTextBox" runat="server" Text='<%# Bind("CustEmail") %>' />
-                    <br />
+                    Email: &nbsp;<asp:TextBox ID="CustEmailTextBox" runat="server" Text='<%# Bind("CustEmail") %>' />
+                    <%--<br />
                     AgentId:
                 <asp:TextBox ID="AgentIdTextBox" runat="server" Text='<%# Bind("AgentId") %>' />
                     <br />
@@ -115,7 +115,8 @@
                 <br />
                 CustPassword:
                 <asp:TextBox ID="CustPasswordTextBox" runat="server" Text='<%# Bind("CustPassword") %>' />
-                <br />
+                <br />--%>
+                    <br />
                     <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />
                     <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" />
                     <br />
@@ -129,7 +130,7 @@
                 <span style="">
                     <%--CustomerID:
                 <asp:TextBox ID="CustomerIDTextBox" runat="server" Readonly="true" Text='<%# Bind("CustomerID") %>' />--%>
-                    &nbsp;<asp:TextBox ID="CustomerIDTextBox" runat="server" Text='<%# Bind("CustomerID") %>' />
+                    <%--&nbsp;<asp:TextBox ID="CustomerIDTextBox" runat="server" Text='<%# Bind("CustomerID") %>' />--%>
 
                     <br />
                     CustFirstName:
@@ -161,7 +162,7 @@
                     <br />
                     <%--    AgentId:
                 <asp:TextBox ID="AgentIdTextBox" runat="server" Text='<%# Bind("AgentId") %>' />--%>
-                    &nbsp;<asp:TextBox ID="CustEmailTextBox" runat="server" Text='<%# Bind("CustEmail") %>' />
+                    Email: &nbsp;<asp:TextBox ID="CustEmailTextBox" runat="server" Text='<%# Bind("CustEmail") %>' />
                     <br />
                     AgentId:
                 <asp:TextBox ID="AgentIdTextBox" runat="server" Text='<%# Bind("AgentId") %>' />
@@ -182,38 +183,38 @@
                 <span style="">
                     <%--CustomerID:
                 <asp:Label ID="CustomerIDLabel" runat="server" Text='<%# Eval("CustomerID") %>' />--%>
-                    &nbsp;<asp:Label ID="CustomerIDLabel" runat="server" Text='<%# Eval("CustomerID") %>' />
+                    <%--&nbsp;<asp:Label ID="CustomerIDLabel" runat="server" Text='<%# Eval("CustomerID") %>' />--%>
                     <br />
-                    CustFirstName:
+                    First Name:
                 <asp:Label ID="CustFirstNameLabel" runat="server" Text='<%# Eval("CustFirstName") %>' />
                     <br />
-                    CustLastName:
+                    Last Name:
                 <asp:Label ID="CustLastNameLabel" runat="server" Text='<%# Eval("CustLastName") %>' />
                     <br />
-                    CustAddress:
+                    Address:
                 <asp:Label ID="CustAddressLabel" runat="server" Text='<%# Eval("CustAddress") %>' />
                     <br />
-                    CustCity:
+                    Municipality:
                 <asp:Label ID="CustCityLabel" runat="server" Text='<%# Eval("CustCity") %>' />
                     <br />
-                    CustProv:
+                    Province:
                 <asp:Label ID="CustProvLabel" runat="server" Text='<%# Eval("CustProv") %>' />
                     <br />
-                    CustPostal:
+                    Postal Code:
                 <asp:Label ID="CustPostalLabel" runat="server" Text='<%# Eval("CustPostal") %>' />
                     <br />
-                    CustCountry:
+                    Country:
                 <asp:Label ID="CustCountryLabel" runat="server" Text='<%# Eval("CustCountry") %>' />
                     <br />
-                    CustHomePhone:
+                    Home Phone:
                 <asp:Label ID="CustHomePhoneLabel" runat="server" Text='<%# Eval("CustHomePhone") %>' />
                     <br />
-                    CustBusPhone:
+                    Business Phone:
                 <asp:Label ID="CustBusPhoneLabel" runat="server" Text='<%# Eval("CustBusPhone") %>' />
                     <br />
                     <%--AgentId:
                 <asp:Label ID="AgentIdLabel" runat="server" Text='<%# Eval("AgentId") %>' />--%>
-                    &nbsp;<asp:Label ID="CustEmailLabel" runat="server" Text='<%# Eval("CustEmail") %>' />
+                   <%-- &nbsp;<asp:Label ID="CustEmailLabel" runat="server" Text='<%# Eval("CustEmail") %>' />
                     <br />
                     AgentId:
                 <asp:Label ID="AgentIdLabel" runat="server" Text='<%# Eval("AgentId") %>' />
@@ -223,7 +224,7 @@
                 <br />
                 CustPassword:
                 <asp:Label ID="CustPasswordLabel" runat="server" Text='<%# Eval("CustPassword") %>' />
-                <br />
+                <br />--%>
                     <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Edit" />
                     <br />
                     <br />
@@ -271,6 +272,7 @@
                     <br />
                     <%--  AgentId:
                 <asp:Label ID="AgentIdLabel" runat="server" Text='<%# Eval("AgentId") %>' />--%>
+                    Email: 
                     &nbsp;<asp:Label ID="CustEmailLabel" runat="server" Text='<%# Eval("CustEmail") %>' />
                     <br />
                     AgentId:
