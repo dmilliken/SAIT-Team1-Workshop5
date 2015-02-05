@@ -30,6 +30,7 @@ public partial class Account_Register2 : System.Web.UI.Page
 
             CustomerDB.AddCustomer(newcust);
             Session["loggedin"] = true;
+            Session["customer"] = newcust.CustomerID;
 
 
         }
