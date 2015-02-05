@@ -10,7 +10,7 @@
     <div>
     <form id="form1" runat="server">
     <div style="margin-right: 3px; margin-left: 0px; margin-top:0px; width: 133px; height: 438px;">
-        <p style="height: 144px; LINE-HEIGHT:26px"> 
+        <p style="height: 144px; LINE-HEIGHT:20px"> 
             Username: <br/>
             Email:<br/>
             Password:<br/>
