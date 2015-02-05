@@ -29,6 +29,8 @@
     
         <asp:TextBox ID="txtusername" runat="server"></asp:TextBox>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" ControlToValidate="txtusername" ErrorMessage="Username Is Required" ForeColor="Red"></asp:RequiredFieldValidator>
+        &nbsp;&nbsp;
+            <asp:Label ID="lblusernameerror" runat="server" ForeColor="Red"></asp:Label>
         <br />
         <asp:TextBox ID="txtemail" runat="server"></asp:TextBox>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ControlToValidate="txtemail" ErrorMessage="Email Is Required" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -67,7 +69,7 @@
         <br />
         <asp:Button ID="btnsubmit" runat="server" OnClick="btnsubmit_Click" Text="Submit" />
 &nbsp;&nbsp;&nbsp;
-        <asp:Button ID="btncls" runat="server" Text="Clear" />
+        <asp:Button ID="btncls" runat="server" Text="Clear" OnClick="btncls_Click" />
         <br />
         <br />
         <br />

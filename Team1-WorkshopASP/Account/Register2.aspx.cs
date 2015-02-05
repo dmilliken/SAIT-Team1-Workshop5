@@ -13,7 +13,7 @@ public partial class Account_Register2 : System.Web.UI.Page
     }
     protected void btnsubmit_Click(object sender, EventArgs e)
     {
-        if (!CustomerDB.username(txtusername.Text))
+        if (CustomerDB.GetCustomerByEmail(txtusername.Text) == null)
         {
             Customer newcust = new Customer();
 
@@ -30,7 +30,26 @@ public partial class Account_Register2 : System.Web.UI.Page
 
             CustomerDB.AddCustomer(newcust);
 
+
+
+        }
+        else
+        {
+            lblusernameerror.Text = "Username Already Taken";
         }
         
+    }
+    protected void btncls_Click(object sender, EventArgs e)
+    {
+       txtfirst.Text = "";
+       txtlast.Text = "";
+       txtaddress.Text = "";
+       txtcity.Text = "";
+       txtcountry.Text = "";
+       txtpostal.Text = "";
+       txthomephone.Text = "";
+       txtbusphone.Text = "";
+       txtusername.Text = "";
+       txtconpass.Text = "";
     }
 }
