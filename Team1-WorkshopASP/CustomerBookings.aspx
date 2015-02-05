@@ -15,7 +15,7 @@
     <div> 
 
         <br />
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="CustomerBookingsPackages">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="CustomerBookingsPackages" Height="132px" Width="628px" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
             <Columns>
                 <%--<asp:BoundField DataField="PackageID" HeaderText="PackageID" SortExpression="PackageID" />--%>
                 <asp:BoundField DataField="PkgName" HeaderText="Package Name" SortExpression="PkgName" />
@@ -26,17 +26,7 @@
                 <%--<asp:BoundField DataField="PkgAgencyCommission" HeaderText="PkgAgencyCommission" SortExpression="PkgAgencyCommission" />--%>
                 <asp:BoundField DataField="BookingDate" HeaderText="Date Booked" SortExpression="BookingDate" />
                 <asp:BoundField DataField="BookingNo" HeaderText="Booking #" SortExpression="BookingNo" />
-
-
-                <asp:TemplateField HeaderText="Price">
-                    <ItemTemplate>
-                 <asp:Label ID="lblAmount" runat="server" Text='<%# "$"+Eval("Price").ToString()%>'>  </asp:Label>
-                     </ItemTemplate>
-                <FooterTemplate>
-                     <asp:Label ID="lblTotal" runat="server"></asp:Label>
-                 </FooterTemplate>
-             </asp:TemplateField>
-          </Columns>
+         </Columns>
         </asp:GridView>
 
         <!-- Data Source -->
