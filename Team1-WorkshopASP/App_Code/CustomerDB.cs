@@ -13,7 +13,6 @@ using System.ComponentModel;
 //Last Edited  Jan 21 2015
 
 
-namespace Team1_Workshop4_Part2
 {
     [DataObject(true)]
     public static class CustomerDB

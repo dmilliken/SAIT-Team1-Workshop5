@@ -5,8 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Team1_Workshop4_Part2
-{
+
+
     class TravelExpertsDB
     {
         // DM: This class contains the connection to the Travel Experts DB. We have included a few ways of connecting here based on some unique difficulties we each encountered.
@@ -19,4 +19,4 @@ namespace Team1_Workshop4_Part2
             return connection;
         } // end method
     } // end class
-}
+

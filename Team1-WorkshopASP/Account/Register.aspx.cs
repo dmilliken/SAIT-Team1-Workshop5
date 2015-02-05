@@ -46,4 +46,9 @@ public partial class Account_Register : Page
 
 
 
+    protected void CreateUser(object sender, EventArgs e)
+    {
+        string tom;
+        tom = CreateUserWizard.MoveNextCommandName;
+    }
 }

@@ -8,7 +8,6 @@
         <p>&nbsp;</p>
         <h2>Use the form below to create a new account.</h2>
     </hgroup>
-
     <asp:CreateUserWizard runat="server" ID="RegisterUser" ViewStateMode="Disabled" OnCreatedUser="RegisterUser_CreatedUser">
         <FinishNavigationTemplate>
             <asp:Button ID="FinishPreviousButton" runat="server" CausesValidation="False" CommandName="MovePrevious" Text="Previous" />
@@ -70,25 +69,6 @@
                                 </td>
                             </tr>
                         </table>
-                    <asp:DetailsView ID="NewCustDetails" runat="server" AutoGenerateRows="False" BorderStyle="None" BorderWidth="0px" DataSourceID="CustomerDataEdit" DefaultMode="Insert" GridLines="None" Height="54px" Width="337px" AutoGenerateInsertButton="True">
-                        <Fields>
-                            <asp:BoundField AccessibleHeaderText="First Name" DataField="CustFirstName" HeaderText="First Name" SortExpression="CustFirstName" />
-                            <asp:BoundField DataField="CustLastName" HeaderText="Last Name" SortExpression="CustLastName" />
-                            <asp:BoundField DataField="CustAddress" HeaderText="Address" SortExpression="CustAddress" />
-                            <asp:BoundField DataField="CustCity" HeaderText="City" SortExpression="CustCity" />
-                            <asp:BoundField DataField="CustProv" HeaderText="Province ex. ON" SortExpression="CustProv" /> 
-                            <asp:BoundField DataField="CustPostal" HeaderText="Postal" SortExpression="CustPostal" />
-                            <asp:BoundField DataField="CustCountry" HeaderText="Country" SortExpression="CustCountry" />
-                            <asp:BoundField DataField="CustHomePhone" HeaderText="Home Phone" SortExpression="CustHomePhone" />
-                            <asp:BoundField DataField="CustBusPhone" HeaderText="Bus Phone" SortExpression="CustBusPhone" />
-                            <asp:BoundField DataField="CustEmail" HeaderText="Re-Enter Email" SortExpression="CustEmail" />
-                        </Fields>
-                    </asp:DetailsView>
-                    <asp:ObjectDataSource ID="CustomerDataEdit" runat="server" ConflictDetection="CompareAllValues" DataObjectTypeName="System.Customer" InsertMethod="AddCustomer" OldValuesParameterFormatString="original_{0}" SelectMethod="GetCustomerByID" TypeName="Team1_Workshop4_Part2.CustomerDB">
-                        <SelectParameters>
-                            <asp:SessionParameter Name="customerID" SessionField="customer" Type="Int32" />
-                        </SelectParameters>
-                    </asp:ObjectDataSource>
                     <br />
                     <br />
                     <br />
@@ -129,4 +109,25 @@
             <asp:Button ID="StepNextButton" runat="server" CommandName="MoveNext" Text="Next" />
         </StepNavigationTemplate>
     </asp:CreateUserWizard>
+    <br />
+    <asp:DetailsView ID="NewCustDetails" runat="server" AutoGenerateRows="False" BorderStyle="None" BorderWidth="0px" DataSourceID="CustomerDataEdit" DefaultMode="Insert" GridLines="None" Height="54px" Width="337px" AutoGenerateInsertButton="false" onitemcommand="CreateUser">
+        <Fields>
+            <asp:BoundField AccessibleHeaderText="First Name" DataField="CustFirstName" HeaderText="First Name" SortExpression="CustFirstName" />
+            <asp:BoundField DataField="CustLastName" HeaderText="Last Name" SortExpression="CustLastName" />
+            <asp:BoundField DataField="CustAddress" HeaderText="Address" SortExpression="CustAddress" />
+            <asp:BoundField DataField="CustCity" HeaderText="City" SortExpression="CustCity" />
+            <asp:BoundField DataField="CustProv" HeaderText="Province ex. ON" SortExpression="CustProv" />
+            <asp:BoundField DataField="CustPostal" HeaderText="Postal" SortExpression="CustPostal" />
+            <asp:BoundField DataField="CustCountry" HeaderText="Country" SortExpression="CustCountry" />
+            <asp:BoundField DataField="CustHomePhone" HeaderText="Home Phone" SortExpression="CustHomePhone" />
+            <asp:BoundField DataField="CustBusPhone" HeaderText="Bus Phone" SortExpression="CustBusPhone" />
+            <asp:BoundField DataField="CustEmail" HeaderText="Re-Enter Email" SortExpression="CustEmail" />
+            <asp:CommandField ButtonType="Button" ShowInsertButton="True" />
+        </Fields>
+    </asp:DetailsView>
+    <asp:ObjectDataSource ID="CustomerDataEdit" runat="server" ConflictDetection="CompareAllValues" DataObjectTypeName="System.Customer" InsertMethod="AddCustomer" OldValuesParameterFormatString="original_{0}" SelectMethod="GetCustomerByID" TypeName="Team1_Workshop4_Part2.CustomerDB">
+        <SelectParameters>
+            <asp:SessionParameter Name="customerID" SessionField="customer" Type="Int32" />
+        </SelectParameters>
+    </asp:ObjectDataSource>
 </asp:Content>

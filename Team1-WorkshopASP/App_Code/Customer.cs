@@ -39,5 +39,9 @@ namespace System
         public string CustEmail { get; set; }
 
         public int AgentId { get; set; }
+
+        public string UserId { get; set; }
+
+        public string CustPassword { get; set; }
     }
 }
