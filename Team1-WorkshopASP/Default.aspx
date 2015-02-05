@@ -20,7 +20,7 @@
 
     <!-- This is Where thoe Home page link goes to to -->--%>
 
-   <h1>Place holder for final Travel Experts Home Page</h1> 
+   <h1>Welcome To The Travel Experts</h1> 
 
     <h3 class="invisible">&nbsp;</h3>
     <p class="invisible"></p>
