@@ -26,10 +26,22 @@
                 <%--<asp:BoundField DataField="PkgAgencyCommission" HeaderText="PkgAgencyCommission" SortExpression="PkgAgencyCommission" />--%>
                 <asp:BoundField DataField="BookingDate" HeaderText="Date Booked" SortExpression="BookingDate" />
                 <asp:BoundField DataField="BookingNo" HeaderText="Booking #" SortExpression="BookingNo" />
-            </Columns>
+
+
+                <asp:TemplateField HeaderText="Price">
+                    <ItemTemplate>
+                 <asp:Label ID="lblAmount" runat="server" Text='<%# "$"+Eval("Price").ToString()%>'>  </asp:Label>
+                     </ItemTemplate>
+                <FooterTemplate>
+                     <asp:Label ID="lblTotal" runat="server"></asp:Label>
+                 </FooterTemplate>
+             </asp:TemplateField>
+          </Columns>
         </asp:GridView>
 
         <!-- Data Source -->
+        <br />
+        <br />
         <asp:ObjectDataSource ID="CustomerBookingsPackages" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetPackagesFromCustomers" TypeName="Team1_Workshop4_Part2.PackagesDB">
             <SelectParameters>
                 <asp:SessionParameter Name="customerId" SessionField="customer" Type="Int32" />
