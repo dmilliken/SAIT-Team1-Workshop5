@@ -7,7 +7,6 @@
 
     <div style="margin-right: 3px; margin-left: 0px; margin-top:0px; height: 420px; z-index:2; position: absolute; top: 459px; width: 118px; left: 441px;">
         <p style="height: 421px"> 
-            Username: <br/>
             Email:<br/>
             Password:<br/>
             Confirm Password:<br/>
@@ -23,11 +22,6 @@
         </p>
         <div style="margin-left: 0px; margin-right: 0px; margin-top:0px; width: 620px; height: 420px; z-index:2; position: absolute; top: 16px; left: 122px;">
     
-        <asp:TextBox ID="txtusername" runat="server"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" ControlToValidate="txtusername" ErrorMessage="Username Is Required" ForeColor="Red"></asp:RequiredFieldValidator>
-        &nbsp;&nbsp;
-            <asp:Label ID="lblusernameerror" runat="server" ForeColor="Red"></asp:Label>
-        <br />
         <asp:TextBox ID="txtemail" runat="server"></asp:TextBox>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ControlToValidate="txtemail" ErrorMessage="Email Is Required" ForeColor="Red"></asp:RequiredFieldValidator>
         <br />

@@ -24,6 +24,7 @@ public partial class Account_Register2 : System.Web.UI.Page
             newcust.CustCity = txtcity.Text;
             newcust.CustCountry = txtcountry.Text;
             newcust.CustPostal = txtpostal.Text;
+            newcust.CustProv = txtprov.Text;
             newcust.CustHomePhone = txthomephone.Text;
             newcust.CustBusPhone = txtbusphone.Text;
             newcust.CustPassword = txtconpass.Text;
@@ -36,7 +37,7 @@ public partial class Account_Register2 : System.Web.UI.Page
         }
         else
         {
-            lblusernameerror.Text = "Username Already Taken";
+            //lblusernameerror.Text = "Username Already Taken";
         }
         
     }
