@@ -35,11 +35,11 @@
         <asp:TextBox ID="txtemail" runat="server"></asp:TextBox>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ControlToValidate="txtemail" ErrorMessage="Email Is Required" ForeColor="Red"></asp:RequiredFieldValidator>
         <br />
-        <asp:TextBox ID="txtpass" runat="server"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="txtpass" TextMode="Password" ErrorMessage="Password Is Required" ForeColor="Red"></asp:RequiredFieldValidator>
-        <br />
-        <asp:TextBox ID="txtconpass" runat="server"></asp:TextBox>
-        <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="txtpass" ControlToValidate="txtconpass" TextMode="Password" ErrorMessage="Password And Confirm Password Must Match" ForeColor="Red"></asp:CompareValidator>
+        <asp:TextBox ID="txtpass" runat="server" TextMode="Password"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="txtpass"  ErrorMessage="Password Is Required" ForeColor="Red"></asp:RequiredFieldValidator>
+            <br />
+        <asp:TextBox ID="txtconpass" runat="server" TextMode="Password"></asp:TextBox>
+        <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="txtconpass" ControlToValidate="txtpass" ErrorMessage="Password And Confirm Password Must Match" ForeColor="Red"></asp:CompareValidator>
         <br />
         <asp:TextBox ID="txtfirst" runat="server"></asp:TextBox>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="txtfirst" ErrorMessage="First Name Is Required" ForeColor="Red"></asp:RequiredFieldValidator>
