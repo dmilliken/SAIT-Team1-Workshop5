@@ -13,23 +13,23 @@ public partial class Account_Register2 : System.Web.UI.Page
     }
     protected void btnsubmit_Click(object sender, EventArgs e)
     {
-        if (CustomerDB.GetCustomerByEmail(txtusername.Text) == null)
+        if (CustomerDB.GetCustomerByEmail(txtemail.Text) == null)
         {
             Customer newcust = new Customer();
 
             newcust.CustFirstName = txtfirst.Text;
             newcust.CustLastName = txtlast.Text;
+            newcust.CustEmail = txtemail.Text;
             newcust.CustAddress = txtaddress.Text;
             newcust.CustCity = txtcity.Text;
             newcust.CustCountry = txtcountry.Text;
             newcust.CustPostal = txtpostal.Text;
             newcust.CustHomePhone = txthomephone.Text;
             newcust.CustBusPhone = txtbusphone.Text;
-            newcust.UserId = txtusername.Text;
             newcust.CustPassword = txtconpass.Text;
 
             CustomerDB.AddCustomer(newcust);
-
+            Session["loggedin"] = true;
 
 
         }
@@ -43,13 +43,13 @@ public partial class Account_Register2 : System.Web.UI.Page
     {
        txtfirst.Text = "";
        txtlast.Text = "";
+       txtemail.Text = "";
        txtaddress.Text = "";
        txtcity.Text = "";
        txtcountry.Text = "";
        txtpostal.Text = "";
        txthomephone.Text = "";
        txtbusphone.Text = "";
-       txtusername.Text = "";
        txtconpass.Text = "";
     }
 }
