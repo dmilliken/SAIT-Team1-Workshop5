@@ -1,16 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Register2.aspx.cs" Inherits="Account_Register2" %>
+﻿<%@ Page Language="C#"  MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Register2.aspx.cs" Inherits="Account_Register2" %>
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <div>
-    <form id="form1" runat="server">
-    <div style="margin-right: 3px; margin-left: 0px; margin-top:0px; width: 133px; height: 438px;">
-        <p style="height: 144px; LINE-HEIGHT:26px"> 
+<asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
+
+    <div style="height: 840px">
+
+    <div style="margin-right: 3px; margin-left: 0px; margin-top:0px; height: 420px; z-index:2; position: absolute; top: 459px; width: 118px; left: 441px;">
+        <p style="height: 421px"> 
             Username: <br/>
             Email:<br/>
             Password:<br/>
@@ -25,7 +21,7 @@
             Home Phone:<br/>
             Bus. Phone<br />
         </p>
-        <div style="margin-left: 121px; margin-right: 0px; margin-top:0px; width: 445px; height: 420px; z-index:2; position: absolute; top: 14px; left: 31px;">
+        <div style="margin-left: 0px; margin-right: 0px; margin-top:0px; width: 620px; height: 420px; z-index:2; position: absolute; top: 16px; left: 122px;">
     
         <asp:TextBox ID="txtusername" runat="server"></asp:TextBox>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" ControlToValidate="txtusername" ErrorMessage="Username Is Required" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -89,8 +85,5 @@
         <br />
         <br />       
 
-       
-        &nbsp;</form>
      </div>
-</body>
-</html>
+</asp:Content>
