@@ -4,7 +4,7 @@
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <link href="Login.css" rel="stylesheet" type="text/css" />
      <hgroup class="title">
-        <h2><asp:Login runat="server" ID="Login1" CssClass="Login" BackColor="#F7F6F3" BorderColor="#E6E2D8" BorderPadding="4" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#333333" >
+        <h2><asp:Login runat="server" ID="Login1" CssClass="Login" BackColor="#FFFFFF" BorderColor="#E6E2D8" BorderPadding="4" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#333333" >
             <InstructionTextStyle Font-Italic="True" ForeColor="Black" />
            
             <LayoutTemplate>
