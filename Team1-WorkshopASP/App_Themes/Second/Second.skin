@@ -8,3 +8,4 @@
 <asp:CompareValidator runat="server" CssClass="validator"> </asp:CompareValidator>
 <asp:RegularExpressionValidator runat="server" CssClass="validator"></asp:RegularExpressionValidator>
 <asp:ValidationSummary runat="server" CssClass="validator"></asp:ValidationSummary>
+<asp:GridView runat=server CssClass="bookingstable"></asp:GridView>

@@ -35,7 +35,9 @@ body {
     border: 1px solid #458DC0;
 }
 
-
+.bookingstable {
+padding: 5px;
+}
 
 
 h1 {

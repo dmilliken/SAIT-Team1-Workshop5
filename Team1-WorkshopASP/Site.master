@@ -19,13 +19,11 @@
   </section>
         <!-- Navigation Menu --> 
     <ul class="menu">
-    
         <li><asp:HyperLink runat="server" ID="HyperLink2" NavigateUrl="~/Default.aspx" ViewStateMode="Disabled">Travel Experts Home</asp:HyperLink></li> 
         <li><asp:HyperLink runat="server" ID="HyperLink1" NavigateUrl="Account/Login.aspx" ViewStateMode="Disabled">Login</asp:HyperLink></li> 
         <li><asp:HyperLink runat="server" ID="HyperLink3" NavigateUrl="CustomerInfo.aspx" ViewStateMode="Disabled">Account Info</asp:HyperLink></li> 
         <li><asp:HyperLink runat="server" ID="HyperLink4" NavigateUrl="CustomerBookings.aspx" ViewStateMode="Disabled">Customer Bookings</asp:HyperLink></li> 
         <li><asp:HyperLink runat="server" ID="RegisterHyperLink" ViewStateMode="Disabled" NavigateUrl="~/Account/Register2.aspx">Register</asp:HyperLink></li>
-    
 
   </ul> 
         

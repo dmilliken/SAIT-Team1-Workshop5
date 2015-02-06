@@ -12,7 +12,7 @@ public partial class Default2 : System.Web.UI.Page
         
         int custid = Convert.ToInt32(Session["customer"]);
         double total = PackagesDB.getpkgtotal(custid);
-        lbltotal.Text = Convert.ToString(total); 
+        lbltotal.Text = total.ToString("c"); 
 
         //Brodie Modified Feb 03 2015, added check login
         if (Convert.ToBoolean(Session["loggedin"]) == false)
