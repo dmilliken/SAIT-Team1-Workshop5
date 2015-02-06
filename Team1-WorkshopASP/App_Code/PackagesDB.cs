@@ -11,7 +11,7 @@ using System.Threading.Tasks;
     [DataObject(true)]
     public class PackagesDB
     {
-        public double getpkgtotal(int custid)
+        public static double getpkgtotal(int custid)
         {
            // int Id = Convert.ToInt32(custid);
 
@@ -161,7 +161,7 @@ using System.Threading.Tasks;
        
         //third variation where the customer Id is used to obtain the packages
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<PackagesWBooking> GetPackagesFromCustomers(int customerId)
+        public static List<PackagesWBooking> GetPackagesFromCustomers(int customerId)
         {
             List<PackagesWBooking> packagesWBooking = new List<PackagesWBooking>();
             SqlConnection connection = TravelExpertsDB.GetConnection();
