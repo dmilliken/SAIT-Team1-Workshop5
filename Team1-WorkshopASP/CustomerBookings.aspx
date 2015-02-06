@@ -12,10 +12,10 @@
 
     <!-- This control displays the customer's bookings/packages in display mode only. -->
     
-    <div> 
+    <div style="margin-right: auto; margin-left: auto; height: 420px; z-index:2; top: 459px; width: 118px; left: 441px; text-align:center">
 
         <br />
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="CustomerBookingsPackages" Height="132px" Width="628px" CellPadding="5">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="CustomerBookingsPackages" Height="132px" Width="628px" CellPadding="5" >
             <Columns>
                 <%--<asp:BoundField DataField="PackageID" HeaderText="PackageID" SortExpression="PackageID" />--%>
                 <%--<asp:BoundField DataField="PackageID" HeaderText="PackageID" SortExpression="PackageID" />--%>
@@ -31,11 +31,14 @@
          </Columns>
         </asp:GridView>
 
-        <!-- Data Source -->
-        <asp:Label ID="Label1" runat="server" Text="<strong>Total:</strong>" Style="position: absolute; left: 341px; "></asp:Label>
-        <asp:Label ID="lbltotal" runat="server" Style="position: absolute; left: 380px; font-weight:bold;"></asp:Label>
+        <!-- Label that displays the total -->
+        <div style="position:relative;">
+        <asp:Label ID="Label1" runat="server" Text="<strong>Total:</strong>" Style="position: absolute; left: 341px; color:red;"></asp:Label>
+        <asp:Label ID="lbltotal" runat="server" Style="position: absolute; left: 380px; font-weight:bold; color:red;"></asp:Label>
+            </div>
         <br />
         <br />
+
         <asp:ObjectDataSource ID="CustomerBookingsPackages" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetPackagesFromCustomers" TypeName="PackagesDB">
             <SelectParameters>
                 <asp:SessionParameter Name="customerId" SessionField="customer" Type="Int32" />
