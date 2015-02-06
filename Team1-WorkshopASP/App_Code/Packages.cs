@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Team1_Workshop4_Part2
+
     //Brodie Zoschke Code Start
-{
+
     //create package object using only package table
     public class Packages
     {
@@ -51,4 +51,4 @@ namespace Team1_Workshop4_Part2
         public string BookingNo { get; set; }
 
     }
-}
+

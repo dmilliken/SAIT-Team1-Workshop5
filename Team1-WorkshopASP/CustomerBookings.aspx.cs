@@ -7,8 +7,13 @@ using System.Web.UI.WebControls;
 
 public partial class Default2 : System.Web.UI.Page
 {
-    protected void Page_Load(object sender, EventArgs e)
+    public void Page_Load(object sender, EventArgs e)
     {
+        
+        int custid = Convert.ToInt32(Session["customer"]);
+        double total = PackagesDB.getpkgtotal(custid);
+        lbltotal.Text = Convert.ToString(total); 
+
         //Brodie Modified Feb 03 2015, added check login
         if (Convert.ToBoolean(Session["loggedin"]) == false)
         {

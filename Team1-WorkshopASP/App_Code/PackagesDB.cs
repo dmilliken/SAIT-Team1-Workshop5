@@ -6,12 +6,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Team1_Workshop4_Part2
-{   //Brodie Zoschke Code starts
+   //Brodie Zoschke Code starts
     //edited February 2nd 2015
     [DataObject(true)]
     public class PackagesDB
     {
+        public double getpkgtotal(int custid)
+        {
+           // int Id = Convert.ToInt32(custid);
+
+           List<PackagesWBooking> p = GetPackagesFromCustomers(custid);
+
+           double total = p.Sum(item => item.PkgBasePrice);
+
+
+           return total;
+        }
+
+
         //new add package method 
         [DataObjectMethod(DataObjectMethodType.Insert)]
         public static int AddPackages(Packages package)
@@ -52,6 +64,7 @@ namespace Team1_Workshop4_Part2
 
 
         }
+        
         //get packages with the bookingdate using the booking id
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<PackagesWBooking> GetPackagesWithBookingDate(int bookingId) 
@@ -145,6 +158,7 @@ namespace Team1_Workshop4_Part2
             return packages;
 
         }
+       
         //third variation where the customer Id is used to obtain the packages
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<PackagesWBooking> GetPackagesFromCustomers(int customerId)
@@ -197,4 +211,4 @@ namespace Team1_Workshop4_Part2
 
     }
         
-}
+

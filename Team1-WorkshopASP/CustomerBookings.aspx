@@ -30,6 +30,8 @@
         </asp:GridView>
 
         <!-- Data Source -->
+        <asp:Label ID="Label1" runat="server" Text="Total:" Style="position: absolute; left: 341px; top: 474px;"></asp:Label>
+        <asp:Label ID="lbltotal" runat="server" Style="position: absolute; left: 380px; top: 474px;"></asp:Label>
         <br />
         <br />
         <asp:ObjectDataSource ID="CustomerBookingsPackages" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetPackagesFromCustomers" TypeName="Team1_Workshop4_Part2.PackagesDB">
