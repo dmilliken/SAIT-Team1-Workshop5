@@ -26,13 +26,15 @@ public partial class Account_Login : Page
         //Brodie Added Feb 03 2015
         string user = ((TextBox)Login1.FindControl("UserName")).Text;
         string pass = ((TextBox)Login1.FindControl("Password")).Text;
-        if (CustomerDB.GetCustomerByEmail(user) != null)
+        if (CustomerDB.Login(user, pass) != null)
         {
-            Customer customer = CustomerDB.GetCustomerByEmail(user);
+            Customer customer = CustomerDB.Login(user, pass);
             Session["loggedin"] = true;
 
-            Session["customer"] = customer.CustomerID;
-            Response.Redirect("~/CustomerInfo.aspx");
+   
+                Session["customer"] = customer.CustomerID;
+                Response.Redirect("~/CustomerInfo.aspx");
+
         }
         else
         {

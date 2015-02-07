@@ -17,17 +17,17 @@ using System.ComponentModel;
     [DataObject(true)]
     public static class CustomerDB
     {
-        //Brodie modified a get customer by email 
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public static Customer GetCustomerByEmail(string customerEmail)
+        public static Customer Login(string customerEmail, string customerPassword)
         {
             SqlConnection connection = TravelExpertsDB.GetConnection();
             string selectStatement =
                 "SELECT CustomerID, CustFirstName, CustLastName, CustAddress, CustCity, CustProv, CustPostal, CustCountry, " +
-                "CustHomePhone, CustBusPhone, CustEmail FROM Customers WHERE CustEmail = @custEmail";
+                "CustHomePhone, CustBusPhone, CustEmail, Password FROM Customers WHERE CustEmail = @custEmail AND Password = @Password";
 
             SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
             selectCommand.Parameters.AddWithValue("@custEmail", customerEmail);
+            selectCommand.Parameters.AddWithValue("@Password", customerPassword);
 
             try
             {
@@ -48,6 +48,59 @@ using System.ComponentModel;
                     customer.CustHomePhone = (string)custReader["CustHomePhone"];
                     customer.CustBusPhone = (string)custReader["CustBusPhone"];
                     customer.CustEmail = (string)custReader["CustEmail"];
+                    customer.CustPassword = (string)custReader["Password"];
+                    //customer.AgentId = (int)custReader["AgentID"];
+
+                    return customer;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        //Brodie modified a get customer by email 
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public static Customer GetCustomerByEmail(string customerEmail)
+        {
+            SqlConnection connection = TravelExpertsDB.GetConnection();
+            string selectStatement =
+                "SELECT CustomerID, CustFirstName, CustLastName, CustAddress, CustCity, CustProv, CustPostal, CustCountry, " +
+                "CustHomePhone, CustBusPhone, CustEmail FROM Customers WHERE CustEmail = @custEmail";
+
+            SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
+            selectCommand.Parameters.AddWithValue("@custEmail", customerEmail);
+        
+
+            try
+            {
+                connection.Open();
+                SqlDataReader custReader =
+                    selectCommand.ExecuteReader(CommandBehavior.SingleRow);
+                if (custReader.Read())
+                {
+                    Customer customer = new Customer();
+                    customer.CustomerID = (int)custReader["CustomerID"];
+                    customer.CustFirstName = (string)custReader["CustFirstName"];
+                    customer.CustLastName = (string)custReader["CustLastName"];
+                    customer.CustAddress = (string)custReader["CustAddress"];
+                    customer.CustCity = (string)custReader["CustCity"];
+                    customer.CustProv = (string)custReader["CustProv"];
+                    customer.CustPostal = (string)custReader["CustPostal"];
+                    customer.CustCountry = (string)custReader["CustCountry"];
+                    customer.CustHomePhone = (string)custReader["CustHomePhone"];
+                    customer.CustBusPhone = (string)custReader["CustBusPhone"];
+                    customer.CustEmail = (string)custReader["CustEmail"];
+                
                     //customer.AgentId = (int)custReader["AgentID"];
 
                     return customer;
