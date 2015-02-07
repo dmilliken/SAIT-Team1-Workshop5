@@ -71,6 +71,20 @@ public partial class SiteMaster : MasterPage
                 throw new InvalidOperationException("Validation of Anti-XSRF token failed.");
             }
         }
+
+          
+        bool display = Convert.ToBoolean(Session["loggedin"]);
+        if (display == true) 
+        {
+            LoginHyperLink.Visible = false;
+            RegisterHyperLink.Visible = false;
+
+        }
+        else
+        {
+            BookingsHyperLink.Visible = false;
+            InfoHyperLink.Visible = false;
+        }
     }
 
     protected void Page_Load(object sender, EventArgs e)

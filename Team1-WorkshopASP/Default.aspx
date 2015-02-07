@@ -2,7 +2,7 @@
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
 
-   <h1>Welcome To The Travel Experts</h1> 
+   <h1>Welcome To The Travel Experts Customer Portal</h1> 
 
     <h3 class="invisible">&nbsp;</h3>
     <p class="invisible"></p>
