@@ -12,8 +12,6 @@ using System.ComponentModel;
 //CPRG 214
 //Last Edited  Jan 21 2015
 
-
-
     [DataObject(true)]
     public static class CustomerDB
     {
@@ -222,6 +220,11 @@ using System.ComponentModel;
         [DataObjectMethod(DataObjectMethodType.Insert)]
         public static int AddCustomer(Customer customer)
         {
+            // check to see if bus phone is set. if it isn't supply this empty value.
+            if (customer.CustBusPhone == null)
+            {
+                customer.CustBusPhone = " ";
+            }
             SqlConnection connection = TravelExpertsDB.GetConnection();
             string insertStatement =
                 "INSERT Customers " +
@@ -275,7 +278,14 @@ using System.ComponentModel;
         [DataObjectMethod(DataObjectMethodType.Update)]
         public static bool UpdateCustomer(Customer original_customer,
             Customer customer)
+   
         {
+            // check to see if bus phone is set. if it isn't supply this empty value.
+             if (customer.CustBusPhone == null)
+            {
+                customer.CustBusPhone = " ";
+            }
+
             SqlConnection connection = TravelExpertsDB.GetConnection();
             string updateStatement =
                 "UPDATE Customers SET " +
@@ -372,6 +382,9 @@ using System.ComponentModel;
                 connection.Close();
             }
         }
+        
+        
+    
 
         //Delete customer
         [DataObjectMethod(DataObjectMethodType.Delete)]

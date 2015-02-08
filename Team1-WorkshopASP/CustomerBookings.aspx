@@ -13,7 +13,7 @@
     <!-- This control displays the customer's bookings/packages in display mode only. -->
     
     <div style="margin-right: auto; margin-left: auto; height: 420px; z-index:2; top: 459px; width: 118px; left: 441px; text-align:center">
-
+        
         <br />
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="CustomerBookingsPackages" Height="132px" Width="628px" CellPadding="5" >
             <Columns>
