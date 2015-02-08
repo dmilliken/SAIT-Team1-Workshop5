@@ -25,7 +25,7 @@
             <TextBoxStyle Font-Size="0.8em" />
             <TitleTextStyle BackColor="#5D7B9D" Font-Bold="True" Font-Size="0.9em" ForeColor="White" />
         </asp:Login>
-            Please Enter You Email To Login</h2></hgroup><section id="loginForm">
+            Please Enter Your Email To Login</h2></hgroup><section id="loginForm">
     </section>
     
 </asp:Content>
