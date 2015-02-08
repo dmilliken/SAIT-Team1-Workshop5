@@ -82,6 +82,7 @@ public partial class SiteMaster : MasterPage
         }
         else
         {
+            LogoutHyperLink.Visible = false;
             BookingsHyperLink.Visible = false;
             InfoHyperLink.Visible = false;
         }
@@ -90,5 +91,9 @@ public partial class SiteMaster : MasterPage
     protected void Page_Load(object sender, EventArgs e)
     {
 
+    }
+    protected void logout(object sender, EventArgs e)
+    {
+        Session["loggedin"] = false;
     }
 }

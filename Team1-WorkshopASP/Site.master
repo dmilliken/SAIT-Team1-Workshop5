@@ -23,7 +23,7 @@
         <li><asp:HyperLink runat="server" ID="InfoHyperLink" NavigateUrl="CustomerInfo.aspx" ViewStateMode="Disabled">Account Info</asp:HyperLink></li> 
         <li><asp:HyperLink runat="server" ID="BookingsHyperLink" NavigateUrl="CustomerBookings.aspx" ViewStateMode="Disabled">Customer Bookings</asp:HyperLink></li> 
         <li><asp:HyperLink runat="server" ID="RegisterHyperLink" ViewStateMode="Disabled" NavigateUrl="~/Account/Register2.aspx">Register</asp:HyperLink></li>
-        <li><asp:HyperLink runat="server" ID="LoginHyperLink" NavigateUrl="Account/Login.aspx" ViewStateMode="Disabled">Login</asp:HyperLink></li> 
+        <li><asp:HyperLink runat="server" ID="LoginHyperLink" NavigateUrl="Account/Login.aspx" ViewStateMode="Disabled">Login</asp:HyperLink> <asp:HyperLink runat="server" ID="LogoutHyperLink" OnClick="Logout" NavigateUrl="Account/Login.aspx" ViewStateMode="Disabled">LogOut</asp:HyperLink></li> 
 
   </ul> 
         
