@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#"  MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Register2.aspx.cs" Inherits="Account_Register2" %>
 
-
+<%-- Team Collaboration : All team members worked on this page --%>
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
 
     <div style="height: 840px">
